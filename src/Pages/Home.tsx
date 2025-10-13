@@ -30,10 +30,10 @@ import { testimonials } from "../../testimonialData";
 import { faqs } from "../../faqData";
 import useIntersectionObserver from "@/hooks/useIntersectionObserver";
 
-const heroImage = "/placeholder.svg";
-const carAvanza = "/placeholder.svg";
-const carInnova = "/placeholder.svg";
-const carCRV = "/placeholder.svg";
+const heroImage = "/hero-section.webp";
+const carAvanza = "/home/toyota-avanza.png";
+const carInnova = "/home/toyota-innova.png";
+const carCRV = "/home/innova-zenix.png";
 
 const AnimatedSection = ({
   children,
@@ -92,21 +92,21 @@ const Home = () => {
       name: "Toyota Avanza",
       category: "MPV",
       capacity: "7 Kursi",
-      price: "350.000",
+      price: "400.000",
       image: carAvanza,
     },
     {
       name: "Toyota Innova",
       category: "MPV",
       capacity: "7 Kursi",
-      price: "450.000",
+      price: "550.000",
       image: carInnova,
     },
     {
-      name: "Honda CR-V",
+      name: "Toyota Zenix",
       category: "SUV",
       capacity: "5 Kursi",
-      price: "550.000",
+      price: "750.000",
       image: carCRV,
     },
   ];
