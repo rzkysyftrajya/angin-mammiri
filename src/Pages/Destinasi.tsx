@@ -3,8 +3,8 @@ import { MapPin, Clock, Camera } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-const fortRotterdam = "/placeholder.svg";
-const losariBeach = "/placeholder.svg";
+const fortRotterdam = "/destinasi/benteng-rotterdam.webp";
+const losariBeach = "/destinasi/pantai-losari.webp";
 
 const Destinasi = () => {
   const destinations = [
@@ -30,7 +30,7 @@ const Destinasi = () => {
       name: "Trans Studio Makassar",
       description:
         "Taman hiburan indoor terbesar di Indonesia dengan berbagai wahana seru untuk keluarga.",
-      image: losariBeach,
+      image: "/destinasi/trans-studio-makassar.webp",
       distance: "8 km dari pusat kota",
       duration: "4-6 jam",
       category: "Hiburan",
@@ -39,7 +39,7 @@ const Destinasi = () => {
       name: "Pulau Samalona",
       description:
         "Pulau cantik dengan air jernih, cocok untuk snorkeling dan diving. Surga bawah laut Makassar.",
-      image: losariBeach,
+      image: "/destinasi/pulau-samalona.webp",
       distance: "7 km dari pelabuhan",
       duration: "Setengah hari",
       category: "Pantai & Diving",
@@ -48,7 +48,7 @@ const Destinasi = () => {
       name: "Malino Highland",
       description:
         "Kawasan pegunungan dengan udara sejuk, perkebunan teh, dan air terjun yang indah.",
-      image: fortRotterdam,
+      image: "/destinasi/malino-highland.webp",
       distance: "90 km dari Makassar",
       duration: "Sehari penuh",
       category: "Pegunungan",
@@ -57,7 +57,7 @@ const Destinasi = () => {
       name: "Bantimurung Waterfall",
       description:
         "Air terjun spektakuler di Taman Nasional Bantimurung-Bulusaraung, surga kupu-kupu Indonesia.",
-      image: losariBeach,
+      image: "/destinasi/bantimurung-waterfall.webp",
       distance: "50 km dari Makassar",
       duration: "4-5 jam",
       category: "Alam",
@@ -76,19 +76,20 @@ const Destinasi = () => {
       <Navbar />
 
       {/* Header */}
-      <section className="relative py-16 flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[500px] h-[60vh] md:h-[70vh] lg:h-[80vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src={fortRotterdam}
-            alt="Destinasi Background"
-            className="w-full h-full object-cover"
+            src="/hero-section.webp"
+            alt="Angin Mammiri Hero"
+            className="w-full h-full object-cover object-center"
           />
+          <div className="absolute inset-0 bg-black/80"></div>
         </div>
         <div className="relative z-10 container mx-auto px-4 text-center text-white">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
             Destinasi Wisata Makassar
           </h1>
-          <p className="text-lg opacity-95">
+          <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto opacity-95">
             Jelajahi keindahan Makassar dan sekitarnya dengan kendaraan nyaman
             dari Angin Mammiri Rentcar
           </p>
@@ -109,6 +110,7 @@ const Destinasi = () => {
                     src={destination.image}
                     alt={destination.name}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    loading={index < 3 ? "eager" : "lazy"}
                   />
                   <div className="absolute top-4 right-4 bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-medium">
                     {destination.category}

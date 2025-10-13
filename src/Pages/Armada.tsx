@@ -1,8 +1,16 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Users, Fuel, Cog, CheckCircle2, Filter } from "lucide-react";
+import {
+  Users,
+  Fuel,
+  Cog,
+  CheckCircle2,
+  Filter,
+  ArrowRight,
+} from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -25,7 +33,7 @@ const Armada = () => {
       name: "Honda Brio",
       category: "City Car",
       transmission: "Manual / Matic",
-      image: "/placeholder.svg",
+      image: "/armada/honda-brio.webp",
       capacity: "5 Penumpang",
       fuel: "Bensin",
       features: ["AC", "Audio", "Power Steering"],
@@ -34,7 +42,7 @@ const Armada = () => {
       name: "Daihatsu Ayla",
       category: "City Car",
       transmission: "Manual / Matic",
-      image: "/placeholder.svg",
+      image: "/armada/daihatsu-ayla.webp",
       capacity: "5 Penumpang",
       fuel: "Bensin",
       features: ["AC", "Audio", "Power Steering"],
@@ -43,7 +51,7 @@ const Armada = () => {
       name: "Toyota Agya",
       category: "City Car",
       transmission: "Manual / Matic",
-      image: "/placeholder.svg",
+      image: "/armada/toyota-agya.webp",
       capacity: "5 Penumpang",
       fuel: "Bensin",
       features: ["AC", "Audio", "Power Steering"],
@@ -54,7 +62,7 @@ const Armada = () => {
       name: "Toyota Calya",
       category: "LCGC & Family Car",
       transmission: "Manual / Matic",
-      image: "/placeholder.svg",
+      image: "/armada/toyota-calya.webp",
       capacity: "7 Penumpang",
       fuel: "Bensin",
       features: ["AC", "Audio", "Power Steering", "Airbag"],
@@ -63,7 +71,7 @@ const Armada = () => {
       name: "Daihatsu Sigra",
       category: "LCGC & Family Car",
       transmission: "Manual / Matic",
-      image: "/placeholder.svg",
+      image: "/armada/daihatsu-sigra.webp",
       capacity: "7 Penumpang",
       fuel: "Bensin",
       features: ["AC", "Audio", "Power Steering", "Airbag"],
@@ -72,7 +80,7 @@ const Armada = () => {
       name: "Toyota Avanza / Daihatsu Xenia",
       category: "LCGC & Family Car",
       transmission: "Manual / Matic",
-      image: "/placeholder.svg",
+      image: "/armada/daihatsu-xenia.webp",
       capacity: "7 Penumpang",
       fuel: "Bensin",
       features: ["AC", "Audio", "Power Steering", "Airbag"],
@@ -81,7 +89,7 @@ const Armada = () => {
       name: "Suzuki Ertiga",
       category: "LCGC & Family Car",
       transmission: "Manual / Matic",
-      image: "/placeholder.svg",
+      image: "/armada/suzuki-ertiga.webp",
       capacity: "7 Penumpang",
       fuel: "Bensin",
       features: ["AC", "Audio", "Power Steering", "Airbag"],
@@ -90,7 +98,7 @@ const Armada = () => {
       name: "Suzuki Ertiga Hybrid",
       category: "LCGC & Family Car",
       transmission: "Manual / Matic",
-      image: "/placeholder.svg",
+      image: "/armada/suzuki-ertiga-hybrid.webp",
       capacity: "7 Penumpang",
       fuel: "Hybrid",
       features: ["AC", "Audio", "Power Steering", "Airbag", "Hybrid System"],
@@ -101,7 +109,7 @@ const Armada = () => {
       name: "Mitsubishi Xpander",
       category: "MPV & SUV",
       transmission: "Manual / Matic",
-      image: "/placeholder.svg",
+      image: "/armada/mitsubishi-xpander.webp",
       capacity: "7 Penumpang",
       fuel: "Bensin",
       features: ["AC", "Audio", "Power Steering", "Airbag", "ABS"],
@@ -110,7 +118,7 @@ const Armada = () => {
       name: "Suzuki XL7",
       category: "MPV & SUV",
       transmission: "Manual / Matic",
-      image: "/placeholder.svg",
+      image: "/armada/suzuki-xl7.webp",
       capacity: "7 Penumpang",
       fuel: "Bensin",
       features: ["AC", "Audio", "Power Steering", "Airbag", "ABS"],
@@ -119,7 +127,7 @@ const Armada = () => {
       name: "All New Avanza",
       category: "MPV & SUV",
       transmission: "Manual / Matic",
-      image: "/placeholder.svg",
+      image: "/armada/toyota-all-new-avanza.webp",
       capacity: "7 Penumpang",
       fuel: "Bensin",
       features: ["AC", "Audio", "Power Steering", "Airbag", "ABS"],
@@ -128,7 +136,7 @@ const Armada = () => {
       name: "Daihatsu Terios",
       category: "MPV & SUV",
       transmission: "Manual / Matic",
-      image: "/placeholder.svg",
+      image: "/armada/daihatsu-terios.webp",
       capacity: "7 Penumpang",
       fuel: "Bensin",
       features: ["AC", "Audio", "Power Steering", "Airbag", "ABS"],
@@ -137,7 +145,7 @@ const Armada = () => {
       name: "Toyota Rush",
       category: "MPV & SUV",
       transmission: "Manual / Matic",
-      image: "/placeholder.svg",
+      image: "/armada/toyota-rush.webp",
       capacity: "7 Penumpang",
       fuel: "Bensin",
       features: ["AC", "Audio", "Power Steering", "Airbag", "ABS"],
@@ -148,7 +156,7 @@ const Armada = () => {
       name: "Grand Innova Diesel",
       category: "Kelas Premium",
       transmission: "Manual / Matic",
-      image: "/placeholder.svg",
+      image: "/armada/innova-diesel.webp",
       capacity: "7 Penumpang",
       fuel: "Diesel",
       features: [
@@ -164,7 +172,7 @@ const Armada = () => {
       name: "Innova Reborn",
       category: "Kelas Premium",
       transmission: "Manual / Matic",
-      image: "/placeholder.svg",
+      image: "/armada/innova-reborn.webp",
       capacity: "7 Penumpang",
       fuel: "Bensin",
       features: [
@@ -180,7 +188,7 @@ const Armada = () => {
       name: "Innova Zenix Hybrid",
       category: "Kelas Premium",
       transmission: "Matic",
-      image: "/placeholder.svg",
+      image: "/armada/innova-zenix.webp",
       capacity: "7 Penumpang",
       fuel: "Hybrid",
       features: [
@@ -197,7 +205,7 @@ const Armada = () => {
       name: "Toyota Fortuner",
       category: "Kelas Premium",
       transmission: "Matic",
-      image: "/placeholder.svg",
+      image: "/armada/toyota-fortuner.webp",
       capacity: "7 Penumpang",
       fuel: "Diesel",
       features: [
@@ -214,7 +222,7 @@ const Armada = () => {
       name: "Mitsubishi Pajero Sport",
       category: "Kelas Premium",
       transmission: "Matic",
-      image: "/placeholder.svg",
+      image: "/public/armada/",
       capacity: "7 Penumpang",
       fuel: "Diesel",
       features: [
@@ -233,7 +241,7 @@ const Armada = () => {
       name: "Isuzu Elf Minibus",
       category: "Armada Bisnis & Rombongan",
       transmission: "Manual",
-      image: "/placeholder.svg",
+      image: "/armada/isuzu-elf-minibus.webp",
       capacity: "15 Penumpang",
       fuel: "Diesel",
       features: ["AC", "Audio", "Power Steering", "Airbag"],
@@ -242,7 +250,7 @@ const Armada = () => {
       name: "Toyota Hiace Commuter",
       category: "Armada Bisnis & Rombongan",
       transmission: "Manual",
-      image: "/placeholder.svg",
+      image: "/armada/toyota-hiace-commuter.webp",
       capacity: "15 Penumpang",
       fuel: "Diesel",
       features: ["AC", "Audio", "Power Steering", "Airbag"],
@@ -251,7 +259,7 @@ const Armada = () => {
       name: "Toyota Hiace Premio",
       category: "Armada Bisnis & Rombongan",
       transmission: "Manual",
-      image: "/placeholder.svg",
+      image: "/armada/toyota-hiace-commuter (2).webp",
       capacity: "12 Penumpang",
       fuel: "Diesel",
       features: [
@@ -261,23 +269,6 @@ const Armada = () => {
         "Airbag",
         "ABS",
         "Leather Seats",
-      ],
-    },
-    {
-      name: "Toyota Hiace Premio Luxury",
-      category: "Armada Bisnis & Rombongan",
-      transmission: "Manual",
-      image: "/placeholder.svg",
-      capacity: "12 Penumpang",
-      fuel: "Diesel",
-      features: [
-        "AC",
-        "Audio",
-        "Power Steering",
-        "Airbag",
-        "ABS",
-        "Leather Seats",
-        "Entertainment System",
       ],
     },
 
@@ -286,7 +277,7 @@ const Armada = () => {
       name: "Toyota Hilux Double Cabin",
       category: "Kendaraan Khusus",
       transmission: "Manual / Matic",
-      image: "/placeholder.svg",
+      image: "/armada/toyota-hilux-double-cabin.webp",
       capacity: "5 Penumpang",
       fuel: "Diesel",
       features: [
@@ -302,7 +293,7 @@ const Armada = () => {
       name: "Toyota Alphard Executive Premium",
       category: "Kendaraan Khusus",
       transmission: "Matic",
-      image: "/placeholder.svg",
+      image: "/armada/toyota-alphard.webp",
       capacity: "7 Penumpang",
       fuel: "Bensin",
       features: [
@@ -327,20 +318,48 @@ const Armada = () => {
       <Navbar />
 
       {/* Header Section */}
-      <section className="relative py-16 flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[500px] h-[60vh] md:h-[70vh] lg:h-[80vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/placeholder.svg"
-            alt="Armada Background"
-            className="w-full h-full object-cover"
+            src="/hero-section.webp"
+            alt="Angin Mammiri Hero"
+            className="w-full h-full object-cover object-center"
           />
+          <div className="absolute inset-0 bg-black/80"></div>
         </div>
+
         <div className="relative z-10 container mx-auto px-4 text-center text-white">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Armada Kami</h1>
-          <p className="text-lg opacity-95">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
+            Armada Kami
+          </h1>
+          <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto opacity-95">
             Pilihan lengkap kendaraan berkualitas untuk berbagai kebutuhan
             perjalanan Anda di Makassar dan sekitarnya
           </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link to="/faq">
+              <Button
+                size="lg"
+                className="bg-white text-primary hover:bg-white/90 font-semibold"
+              >
+                Cara Pemesanan
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+            <a
+              href="https://wa.me/6281342222747?text=Halo%20Angin%20Mammiri%20Rentcar,%20saya%20ingin%20booking%20mobil%20dari%20halaman%20armada"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-white text-white hover:bg-white/10 font-semibold"
+              >
+                Hubungi WhatsApp
+              </Button>
+            </a>
+          </div>
         </div>
       </section>
 

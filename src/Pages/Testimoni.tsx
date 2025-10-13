@@ -11,19 +11,20 @@ const Testimoni = () => {
       <Navbar />
 
       {/* Header */}
-      <section className="relative py-16 flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[500px] h-[60vh] md:h-[70vh] lg:h-[80vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/placeholder.svg"
-            alt="Testimoni Background"
-            className="w-full h-full object-cover"
+            src="/hero-section.webp"
+            alt="Angin Mammiri Hero"
+            className="w-full h-full object-cover object-center"
           />
+          <div className="absolute inset-0 bg-black/80"></div>
         </div>
         <div className="relative z-10 container mx-auto px-4 text-center text-white">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
             Testimoni Customer
           </h1>
-          <p className="text-lg opacity-95">
+          <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto opacity-95">
             Kepuasan customer adalah prioritas utama kami. Lihat apa kata mereka
             tentang layanan Angin Mammiri Rentcar
           </p>

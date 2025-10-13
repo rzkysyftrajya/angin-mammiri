@@ -92,7 +92,7 @@ const Home = () => {
       name: "Toyota Avanza",
       category: "MPV",
       capacity: "7 Kursi",
-      price: "400.000",
+      price: "400 .000",
       image: carAvanza,
     },
     {
@@ -127,13 +127,16 @@ const Home = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[500px] h-[60vh] md:h-[70vh] lg:h-[80vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={heroImage}
             alt="Angin Mammiri Hero"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
+            loading="eager"
+            fetchPriority="high"
           />
+          <div className="absolute inset-0 bg-black/80"></div>
         </div>
 
         <div className="relative z-10 container mx-auto px-4 text-center text-white">
@@ -333,6 +336,7 @@ const Home = () => {
                     src={car.image}
                     alt={car.name}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    loading={index < 2 ? "eager" : "lazy"}
                   />
                 </div>
                 <CardContent className="p-6">
@@ -479,41 +483,41 @@ const Home = () => {
                 name: "Pantai Losari",
                 description:
                   "Pantai ikonik dengan mercusuar dan kuliner laut segar",
-                image: "/placeholder.svg",
+                image: "/destinasi/pantai-losari.webp",
                 category: "Wisata Alam",
               },
               {
                 name: "Benteng Rotterdam",
                 description:
                   "Benteng bersejarah dengan arsitektur Belanda yang megah",
-                image: "/placeholder.svg",
+                image: "/destinasi/benteng-rotterdam.webp",
                 category: "Sejarah",
               },
               {
                 name: "Coto Makassar",
                 description:
                   "Kuliner khas Makassar yang legendaris dan autentik",
-                image: "/placeholder.svg",
+                image: "/destinasi/coto-makassar.webp",
                 category: "Kuliner",
               },
               {
                 name: "Mall Panakukkang",
                 description: "Pusat perbelanjaan modern dengan berbagai tenant",
-                image: "/placeholder.svg",
+                image: "/destinasi/mall-panakkukang.webp",
                 category: "Belanja",
               },
               {
                 name: "Kota Tua",
                 description:
                   "Area bersejarah dengan bangunan kolonial dan museum",
-                image: "/placeholder.svg",
+                image: "/destinasi/kota-tua.webp",
                 category: "Sejarah",
               },
               {
                 name: "Pulau Samalona",
                 description:
                   "Pulau kecil dengan pantai pasir putih dan snorkeling",
-                image: "/placeholder.svg",
+                image: "/destinasi/pulau-samalona.webp",
                 category: "Wisata Alam",
               },
             ].map((destination, index) => (
@@ -526,6 +530,7 @@ const Home = () => {
                     src={destination.image}
                     alt={destination.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading={index < 3 ? "eager" : "lazy"}
                   />
                 </div>
                 <CardContent className="p-6">
@@ -574,14 +579,14 @@ const Home = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
             {[
-              { image: "/placeholder.svg", alt: "Armada Toyota Avanza" },
-              { image: "/placeholder.svg", alt: "Pantai Losari sunset" },
-              { image: "/placeholder.svg", alt: "Benteng Rotterdam" },
-              { image: "/placeholder.svg", alt: "Coto Makassar" },
-              { image: "/placeholder.svg", alt: "Armada Honda CR-V" },
-              { image: "/placeholder.svg", alt: "Wisata kuliner" },
-              { image: "/placeholder.svg", alt: "Armada Toyota Innova" },
-              { image: "/placeholder.svg", alt: "Momen perjalanan" },
+              { image: "/galeri/testi-1.webp", alt: "Armada Toyota Avanza" },
+              { image: "/galeri/testi-5.webp", alt: "Pantai Losari sunset" },
+              { image: "/galeri/testi-10.webp", alt: "Benteng Rotterdam" },
+              { image: "/galeri/testi-15.webp", alt: "Coto Makassar" },
+              { image: "/galeri/testi-20.webp", alt: "Armada Honda CR-V" },
+              { image: "/galeri/testi-3.webp", alt: "Wisata kuliner" },
+              { image: "/galeri/testi-8.webp", alt: "Armada Toyota Innova" },
+              { image: "/galeri/testi-12.webp", alt: "Momen perjalanan" },
             ].map((item, index) => (
               <div
                 key={index}
@@ -591,6 +596,7 @@ const Home = () => {
                   src={item.image}
                   alt={item.alt}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
                 />
               </div>
             ))}
@@ -626,7 +632,8 @@ const Home = () => {
                 title: "5 Tempat Makan Coto Makassar Terbaik 2024",
                 excerpt:
                   "Panduan lengkap mencari coto makassar asli dengan cita rasa autentik...",
-                image: "/placeholder.svg",
+                image:
+                  "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&h=300&fit=crop&crop=center",
                 date: "15 Jan 2024",
                 category: "Kuliner",
               },
@@ -634,7 +641,8 @@ const Home = () => {
                 title: "Rute Wisata 3 Hari di Kota Daeng",
                 excerpt:
                   "Itinerary lengkap menjelajahi Makassar dari Pantai Losari hingga Benteng Rotterdam...",
-                image: "/placeholder.svg",
+                image:
+                  "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&h=300&fit=crop&crop=center",
                 date: "12 Jan 2024",
                 category: "Wisata",
               },
@@ -642,7 +650,8 @@ const Home = () => {
                 title: "Tips Aman Rental Mobil di Makassar",
                 excerpt:
                   "Panduan praktis memilih rental mobil terpercaya dan tips perjalanan aman...",
-                image: "/placeholder.svg",
+                image:
+                  "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=300&fit=crop&crop=center",
                 date: "10 Jan 2024",
                 category: "Tips",
               },
@@ -656,6 +665,7 @@ const Home = () => {
                     src={post.image}
                     alt={post.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
                   />
                 </div>
                 <CardContent className="p-6">

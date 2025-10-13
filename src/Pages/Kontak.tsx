@@ -13,17 +13,20 @@ const Kontak = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <header className="relative py-16 flex items-center justify-center overflow-hidden">
+      <header className="relative min-h-[500px] h-[60vh] md:h-[70vh] lg:h-[80vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/placeholder.svg"
-            alt="Kontak Background"
-            className="w-full h-full object-cover"
+            src="/hero-section.webp"
+            alt="Angin Mammiri Hero"
+            className="w-full h-full object-cover object-center"
           />
+          <div className="absolute inset-0 bg-black/80"></div>
         </div>
         <div className="relative z-10 container mx-auto px-4 text-center text-white">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Hubungi Kami</h1>
-          <p className="text-lg opacity-95 max-w-2xl mx-auto">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
+            Hubungi Kami
+          </h1>
+          <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto opacity-95">
             Kami siap membantu Anda 24/7. Jangan ragu untuk menghubungi kami
             melalui form, telepon, atau kunjungi langsung kantor kami.
           </p>

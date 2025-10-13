@@ -3,9 +3,12 @@ import { Calendar, User, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-const heroImage = "/placeholder.svg";
-const losariBeach = "/placeholder.svg";
-const fortRotterdam = "/placeholder.svg";
+const heroImage =
+  "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=600&fit=crop&crop=center";
+const losariBeach =
+  "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop&crop=center";
+const fortRotterdam =
+  "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=600&fit=crop&crop=center";
 
 const Blog = () => {
   const blogPosts = [
@@ -78,19 +81,20 @@ const Blog = () => {
       <Navbar />
 
       {/* Header */}
-      <section className="relative py-16 flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[500px] h-[60vh] md:h-[70vh] lg:h-[80vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src={heroImage}
-            alt="Blog Background"
-            className="w-full h-full object-cover"
+            src="/hero-section.webp"
+            alt="Angin Mammiri Hero"
+            className="w-full h-full object-cover object-center"
           />
+          <div className="absolute inset-0 bg-black/80"></div>
         </div>
         <div className="relative z-10 container mx-auto px-4 text-center text-white">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
             Blog & Artikel
           </h1>
-          <p className="text-lg opacity-95">
+          <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto opacity-95">
             Tips, panduan, dan informasi menarik seputar rental mobil dan wisata
             di Makassar
           </p>
@@ -131,6 +135,7 @@ const Blog = () => {
                     src={post.image}
                     alt={post.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    loading={index < 3 ? "eager" : "lazy"}
                   />
                   <div className="absolute top-4 right-4 bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-medium">
                     {post.category}

@@ -30,7 +30,7 @@ const Navbar = () => {
             className="flex items-center gap-2 font-bold text-xl text-primary hover:opacity-80 transition-opacity"
           >
             <img
-              src="/placeholder.svg"
+              src="/logo.png"
               alt="Angin Mammiri Rentcar Logo"
               className="h-8 w-8"
             />

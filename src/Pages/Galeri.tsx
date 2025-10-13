@@ -3,44 +3,14 @@ import Footer from "@/components/Footer";
 const carAvanza = "/placeholder.svg";
 const carInnova = "/placeholder.svg";
 const carCRV = "/placeholder.svg";
-const heroImage = "/placeholder.svg";
+const heroImage = "/hero-section.webp";
 
 const Galeri = () => {
-  const galleryImages = [
-    {
-      src: carAvanza,
-      alt: "Toyota Avanza - Tampak Samping",
-      category: "Armada",
-    },
-    {
-      src: carInnova,
-      alt: "Toyota Innova - Interior Nyaman",
-      category: "Armada",
-    },
-    { src: carCRV, alt: "Honda CR-V - Eksterior Mewah", category: "Armada" },
-    {
-      src: heroImage,
-      alt: "Kantor Angin Mammiri Rentcar",
-      category: "Fasilitas",
-    },
-    {
-      src: carAvanza,
-      alt: "Proses Serah Terima Kendaraan",
-      category: "Layanan",
-    },
-    {
-      src: carInnova,
-      alt: "Tim Angin Mammiri yang Profesional",
-      category: "Tim",
-    },
-    {
-      src: carCRV,
-      alt: "Dokumentasi Perjalanan Customer",
-      category: "Customer",
-    },
-    { src: heroImage, alt: "Area Parkir Angin Mammiri", category: "Fasilitas" },
-    { src: carAvanza, alt: "Perawatan Rutin Armada", category: "Layanan" },
-  ];
+  const galleryImages = Array.from({ length: 22 }, (_, i) => ({
+    src: `/galeri/testi-${i + 1}.webp`,
+    alt: `Testimoni ${i + 1}`,
+    category: "Testimoni",
+  }));
 
   const categories = [
     "Semua",
@@ -49,6 +19,7 @@ const Galeri = () => {
     "Layanan",
     "Tim",
     "Customer",
+    "Testimoni",
   ];
 
   return (
@@ -56,17 +27,20 @@ const Galeri = () => {
       <Navbar />
 
       {/* Header */}
-      <section className="relative py-16 flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[500px] h-[60vh] md:h-[70vh] lg:h-[80vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={heroImage}
-            alt="Galeri Background"
-            className="w-full h-full object-cover"
+            alt="Angin Mammiri Hero"
+            className="w-full h-full object-cover object-center"
           />
+          <div className="absolute inset-0 bg-black/80"></div>
         </div>
         <div className="relative z-10 container mx-auto px-4 text-center text-white">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Galeri Kami</h1>
-          <p className="text-lg opacity-95">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
+            Galeri Kami
+          </h1>
+          <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto opacity-95">
             Lihat koleksi foto armada, fasilitas, dan dokumentasi layanan Angin
             Mammiri Rentcar
           </p>

@@ -17,7 +17,11 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <Car className="h-6 w-6 text-primary" />
+              <img
+                src="/logo.png"
+                alt="Angin Mammiri Rentcar Logo"
+                className="h-8 w-auto"
+              />
               <span className="font-bold text-lg">Angin Mammiri Rentcar</span>
             </div>
             <p className="text-sm text-muted-foreground mb-4">
