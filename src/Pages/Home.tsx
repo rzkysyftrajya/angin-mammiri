@@ -89,25 +89,58 @@ const Home = () => {
 
   const featuredCars = [
     {
-      name: "Toyota Avanza",
+      name: "All New Avanza",
       category: "MPV",
-      capacity: "7 Kursi",
-      price: "400 .000",
-      image: carAvanza,
+      capacity: "7 Penumpang",
+      price: "400.000",
+      rating: 4.8,
+      fuel: "Bensin",
+      image: "/armada/toyota-all-new-avanza.webp",
     },
     {
-      name: "Toyota Innova",
+      name: "Mitsubishi Xpander",
       category: "MPV",
-      capacity: "7 Kursi",
+      capacity: "7 Penumpang",
+      price: "400.000",
+      rating: 4.8,
+      fuel: "Bensin",
+      image: "/armada/mitsubishi-xpander.webp",
+    },
+    {
+      name: "Innova Reborn",
+      category: "MPV",
+      capacity: "7 Penumpang",
       price: "550.000",
-      image: carInnova,
+      rating: 4.9,
+      fuel: "Bensin",
+      image: "/armada/innova-reborn.webp",
     },
     {
-      name: "Toyota Zenix",
-      category: "SUV",
-      capacity: "5 Kursi",
+      name: "Innova Zenix Hybrid",
+      category: "MPV",
+      capacity: "7 Penumpang",
       price: "750.000",
-      image: carCRV,
+      rating: 4.8,
+      fuel: "Bensin",
+      image: "/armada/innova-zenix.webp",
+    },
+    {
+      name: "Toyota Fortuner",
+      category: "SUV",
+      capacity: "7 Penumpang",
+      price: "1.300.000",
+      rating: 4.9,
+      fuel: "Bensin",
+      image: "/armada/toyota-fortuner.webp",
+    },
+    {
+      name: "Toyota Alphard Executive Premium",
+      category: "MPV Premium",
+      capacity: "7 Penumpang",
+      price: "3.000.000",
+      rating: 5.0,
+      fuel: "Bensin",
+      image: "/armada/toyota-alphard.webp",
     },
   ];
 
@@ -325,7 +358,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8 max-w-5xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 max-w-6xl mx-auto px-4">
             {featuredCars.map((car, index) => (
               <Card
                 key={index}
@@ -336,7 +369,7 @@ const Home = () => {
                     src={car.image}
                     alt={car.name}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                    loading={index < 2 ? "eager" : "lazy"}
+                    loading={index < 3 ? "eager" : "lazy"}
                   />
                 </div>
                 <CardContent className="p-6">
@@ -346,19 +379,44 @@ const Home = () => {
                       {car.category}
                     </span>
                   </div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex items-center gap-1">
+                      {[...Array(5)].map((_, i) => (
+                        <svg
+                          key={i}
+                          className={`w-4 h-4 ${
+                            i < Math.floor(car.rating)
+                              ? "text-yellow-400 fill-current"
+                              : "text-gray-300"
+                          }`}
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                      ))}
+                      <span className="text-sm font-medium">{car.rating}</span>
+                    </div>
+                    <span className="text-xs text-muted-foreground">
+                      {car.capacity}
+                    </span>
+                  </div>
                   <p className="text-muted-foreground text-sm mb-4">
-                    {car.capacity}
+                    {car.fuel}
                   </p>
                   <div className="flex items-center justify-between">
                     <div>
                       <span className="text-2xl font-bold text-primary">
-                        Rp {car.price}
+                        Rp {car.price.replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
                       </span>
                       <span className="text-sm text-muted-foreground">
                         /hari
                       </span>
                     </div>
-                    <Link to="/armada">
+                    <Link
+                      to={`/armada/${car.name
+                        .replace(/\s+/g, "-")
+                        .toLowerCase()}`}
+                    >
                       <Button size="sm">Detail</Button>
                     </Link>
                   </div>
@@ -366,7 +424,6 @@ const Home = () => {
               </Card>
             ))}
           </div>
-
           <div className="text-center mt-8">
             <Link to="/armada">
               <Button size="lg" variant="outline" className="font-semibold">
@@ -579,14 +636,14 @@ const Home = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
             {[
-              { image: "/galeri/testi-1.webp", alt: "Armada Toyota Avanza" },
-              { image: "/galeri/testi-5.webp", alt: "Pantai Losari sunset" },
-              { image: "/galeri/testi-10.webp", alt: "Benteng Rotterdam" },
-              { image: "/galeri/testi-15.webp", alt: "Coto Makassar" },
-              { image: "/galeri/testi-20.webp", alt: "Armada Honda CR-V" },
-              { image: "/galeri/testi-3.webp", alt: "Wisata kuliner" },
-              { image: "/galeri/testi-8.webp", alt: "Armada Toyota Innova" },
-              { image: "/galeri/testi-12.webp", alt: "Momen perjalanan" },
+              { image: "/galeri/testi-1.webp", alt: "Testimoni 1" },
+              { image: "/galeri/testi-2.webp", alt: "Testimoni 2" },
+              { image: "/galeri/testi-3.webp", alt: "Testimoni 3" },
+              { image: "/galeri/testi-4.webp", alt: "Testimoni 4" },
+              { image: "/galeri/testi-5.webp", alt: "Testimoni 5" },
+              { image: "/galeri/testi-6.webp", alt: "Testimoni 6" },
+              { image: "/galeri/testi-7.webp", alt: "Testimoni 7" },
+              { image: "/galeri/testi-8.webp", alt: "Testimoni 8" },
             ].map((item, index) => (
               <div
                 key={index}

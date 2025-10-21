@@ -6,7 +6,7 @@ const carCRV = "/placeholder.svg";
 const heroImage = "/hero-section.webp";
 
 const Galeri = () => {
-  const galleryImages = Array.from({ length: 22 }, (_, i) => ({
+  const galleryImages = Array.from({ length: 11 }, (_, i) => ({
     src: `/galeri/testi-${i + 1}.webp`,
     alt: `Testimoni ${i + 1}`,
     category: "Testimoni",

@@ -1,4 +1,9 @@
-- [x] Update galleryImages array in src/Pages/Galeri.tsx to include 22 testi images
-- [x] Add "Testimoni" to categories array in src/Pages/Galeri.tsx
-- [x] Fix hero section text visibility in src/Pages/Home.tsx by adding dark overlay
-- [x] Make hero image responsive and centered
+# TODO: Add New Car Listings to Home Page
+
+- [x] Update featuredCars array with 6 new cars (Honda Brio, Toyota All New Avanza, Mitsubishi Xpander, Toyota Innova Reborn, Toyota Fortuner, Toyota Alphard New)
+- [x] Add rating field to car objects
+- [x] Add fuel type field to car objects
+- [x] Update card display to show rating with stars
+- [x] Fix price formatting (remove space, add "Rp" prefix)
+- [x] Update images to match available armada images
+- [ ] Test the updated car listings display

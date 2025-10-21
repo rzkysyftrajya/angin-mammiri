@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "@/components/ScrollToTop";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import Home from "@/Pages/Home";
 import Armada from "@/Pages/Armada";
 import Galeri from "@/Pages/Galeri";
@@ -26,9 +27,11 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
+        <FloatingWhatsApp />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/armada" element={<Armada />} />
+          <Route path="/armada/:carName" element={<Armada />} />
           <Route path="/galeri" element={<Galeri />} />
           <Route path="/testimoni" element={<Testimoni />} />
           <Route path="/destinasi" element={<Destinasi />} />

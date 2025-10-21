@@ -9,13 +9,17 @@ import {
   Filter,
   ArrowRight,
 } from "lucide-react";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const Armada = () => {
+  const { carName } = useParams<{ carName: string }>();
   const [selectedCategory, setSelectedCategory] = useState("Semua");
+  const [selectedCar, setSelectedCar] = useState<string | null>(
+    carName || null
+  );
 
   const categories = [
     "Semua",
@@ -222,7 +226,7 @@ const Armada = () => {
       name: "Mitsubishi Pajero Sport",
       category: "Kelas Premium",
       transmission: "Matic",
-      image: "/public/armada/",
+      image: "/armada/toyota-fortuner (2).webp",
       capacity: "7 Penumpang",
       fuel: "Diesel",
       features: [
@@ -313,6 +317,22 @@ const Armada = () => {
       ? cars
       : cars.filter((car) => car.category === selectedCategory);
 
+  // Effect to scroll to selected car
+  useEffect(() => {
+    if (selectedCar) {
+      const element = document.getElementById(`car-${selectedCar}`);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "center" });
+        // Highlight the car briefly
+        element.classList.add("ring-2", "ring-primary");
+        setTimeout(() => {
+          element.classList.remove("ring-2", "ring-primary");
+        }, 2000);
+      }
+      setSelectedCar(null);
+    }
+  }, [selectedCar]);
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -399,6 +419,7 @@ const Armada = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredCars.map((car, index) => (
               <Card
+                id={`car-${car.name.replace(/\s+/g, "-").toLowerCase()}`}
                 key={index}
                 className="overflow-hidden hover:shadow-xl transition-all duration-300 group"
               >
