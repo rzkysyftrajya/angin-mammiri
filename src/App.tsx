@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "@/components/ScrollToTop";
+import RouteMetadata from "@/components/RouteMetadata";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import Home from "@/Pages/Home";
 import Armada from "@/Pages/Armada";
@@ -26,6 +27,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <RouteMetadata />
         <ScrollToTop />
         <FloatingWhatsApp />
         <Routes>

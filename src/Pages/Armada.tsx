@@ -373,8 +373,7 @@ const Armada = () => {
             >
               <Button
                 size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white/10 font-semibold"
+                className="bg-accent text-accent-foreground font-semibold hover:bg-accent/90"
               >
                 Hubungi WhatsApp
               </Button>
